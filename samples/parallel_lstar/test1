@@ -1,0 +1,1 @@
+mpiexec -np 2 ./run_lstar_loc.sh ../../unit_tests/test_data/WHIDouble.vts B 8.5

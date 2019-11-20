@@ -1,0 +1,12 @@
+# data files
+*.png
+*.pdf
+*.tab.txt
+*.vts
+.idea/*
+.DS_Store
+stdout*.txt
+stderr*.txt
+#binary files
+*.pyc
+*.so

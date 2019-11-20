@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#SBATCH --job-name plstar_conv_double_1e-4
+#SBATCH --qos normal
+#SBATCH --nodes 32
+#SBATCH --ntasks-per-node 24
+#SBATCH --time 12:00:00
+#SBATCH --output test_conv.out
+#SBATCH --partition shas
+
+# the slurm module provides the srun command
+# module load slurm
+module load intel/17.0.0
+module load impi
+module load python
+module load tbb
+
+export OMP_NUM_THREADS=1
+
+time mpirun python ../parallel_conv.py -f ../../../unit_tests/test_data/WHISingle.vts -v "B" -r 3.5 -t 1
+
+
+
+
+
+

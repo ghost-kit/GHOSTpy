@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+#BSUB -a poe                  			# set parallel operating environment
+#BSUB -P P28100045         			# project code
+#BSUB -J murphy_plstar_64_Double      		# job name
+#BSUB -W 06:00                			# wall-clock time (hrs:mins)
+#BSUB -n 128                   			# number of tasks in job
+#BSUB -R "span[ptile=16]"      			# run four MPI tasks per node
+#BSUB -q regular              			# queue
+#BSUB -e errors.%J.hybrid     			# error file name in which %J is replaced by the job ID
+#BSUB -o output.%J.hybrid     			# output file name in which %J is replaced by the job ID
+ 
+export OMP_NUM_THREADS=2
+export MP_TASK_AFFINITY=core:$OMP_NUM_THREADS
+
+module load python
+module load all-python-libs
+module load python-vtk
+ 
+time mpirun.lsf ../run_lstar.sh /glade/u/home/jmurphy/src/ghostpy/unit_tests/test_data/WHIDouble.vts B 8.5
+
+
+

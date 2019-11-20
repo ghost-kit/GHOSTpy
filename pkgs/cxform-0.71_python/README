@@ -1,0 +1,27 @@
+Instructions
+============
+
+Install: 
+
+  $ python setup-cxform.py install
+
+Notes:
+* The install command accepts many arguments:
+  * Add "--help" for a full list.
+  * Add "--prefix=/opt" to install to /opt/python2.X/site-packages
+  * Add "--install-lib=/opt/cxform" to install to /opt/cxform
+
+Make sure the module works: 
+
+   $ python cxform_test.py
+
+Important Notes
+===============
+CXFORM v 0.71 translates points by the radius of the sun.  This
+version of cxform-manual.c has line 940 commented out, so it does not
+do this translation.
+
+Adapted from
+============
+* http://code.google.com/p/python-magnetosphere/source/checkout
+* http://nssdcftp.gsfc.nasa.gov/selected_software/coordinate_transform/

@@ -1,0 +1,44 @@
+Instructions
+============
+
+Install 
+--------
+
+  $ python setup-geopack.py install config_fc
+
+
+Notes
+-----
+
+* You will need to add flags to the "config_fc" command, as GEOPACK
+  must be compiled with a flag to force 8-byte reals.  This
+  flag varies from compiler to compiler.  Here's a list of known
+  compilers & flags:
+  * gfortran:  --fcompiler=gnu95 --f77flags=-fdefault-real-8
+  * g77:  --fcompiler=gnu --f77flags=-fdefault-real-8
+  * portland:  --fcompiler=pg  --f77flags=-r8
+  * AIX:  --fcompiler=[unknown] --f77flags=-r8
+* The "config_fc" command accepts many arguments.  Add "--help" for a
+  full list.
+
+
+* The install command accepts many arguments:
+  * Add "--help" for a full list of arguments.
+  * Add "--prefix=/opt" to install to /opt/python2.X/site-packages
+  * Add "--install-lib=/opt/geopack" to install to /opt/geopack
+
+
+Test your installation!
+-----------------------
+
+Make sure the module works: 
+
+   $ cd pyLTR/geopack
+   $ python geopack_test.py
+
+Typically errors suggest that 4-byte reals are being used instead of
+8-byte reals.  See install notes, above.
+
+Notes
+===============
+Python bindings created via f2py http://www.scipy.org/F2py

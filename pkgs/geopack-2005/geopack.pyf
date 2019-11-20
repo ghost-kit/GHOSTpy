@@ -1,0 +1,192 @@
+!    -*- f90 -*-
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! This file was auto-generated with f2py (version:2) and hand-edited
+! by Peter Schmitt (schmitt<at>ucar<dot>edu) on January 26, 2011 for
+! compatibility with pyLTR.
+!
+! For details on f2py, see http://cens.ioc.ee/projects/f2py2e/
+!
+! See the commends in geopack.F for details on GEOPACK (espcially 
+! the subroutine parameters).
+!
+! Note: the context of this file is case sensitive.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+python module geopack ! in 
+    interface  ! in :geopack
+        subroutine igrf_gsm(xgsm,ygsm,zgsm,hxgsm,hygsm,hzgsm) ! in :geopack:geopack.F
+            real*8 intent(in) :: xgsm
+            real*8 intent(in) :: ygsm
+            real*8 intent(in) :: zgsm
+            real*8 intent(out) :: hxgsm
+            real*8 intent(out) :: hygsm
+            real*8 intent(out) :: hzgsm
+        end subroutine igrf_gsm
+        subroutine igrf_geo(r,theta,phi,br,btheta,bphi) ! in :geopack:geopack.F
+            real*8 intent(in) :: r
+            real*8 intent(in) :: theta
+            real*8 intent(in) :: phi
+            real*8 intent(out) :: br
+            real*8 intent(out) :: btheta
+            real*8 intent(out) :: bphi
+        end subroutine igrf_geo
+        subroutine dip(xgsm,ygsm,zgsm,bxgsm,bygsm,bzgsm) ! in :geopack:geopack.F
+            real*8 intent(in) :: xgsm
+            real*8 intent(in) :: ygsm
+            real*8 intent(in) :: zgsm
+            real*8 intent(out) :: bxgsm
+            real*8 intent(out) :: bygsm
+            real*8 intent(out) :: bzgsm
+        end subroutine dip
+        subroutine sun(iyear,iday,ihour,min_bn,isec,gst,slong,srasn,sdec) ! in :geopack:geopack.F
+            integer intent(in) :: iyear
+            integer intent(in) :: iday
+            integer intent(in) :: ihour
+            integer intent(in) :: min_bn
+            integer intent(in) :: isec
+            real*8 intent(out) :: gst
+            real*8 intent(out) :: slong
+            real*8 intent(out) :: srasn
+            real*8 intent(out) :: sdec
+        end subroutine sun
+        subroutine sphcar(r,theta,phi,x,y,z,j) ! in :geopack:geopack.F
+            real*8 intent(in,out) :: r
+            real*8 intent(in,out) :: theta
+            real*8 intent(in,out) :: phi
+            real*8 intent(in,out) :: x
+            real*8 intent(in,out) :: y
+            real*8 intent(in,out) :: z
+            integer intent(in) :: j
+        end subroutine sphcar
+        subroutine bspcar(theta,phi,br,btheta,bphi,bx,by,bz) ! in :geopack:geopack.F
+            real*8 intent(in) :: theta
+            real*8 intent(in) :: phi
+            real*8 intent(in) :: br
+            real*8 intent(in) :: btheta
+            real*8 intent(in) :: bphi
+            real*8 intent(in,out) :: bx
+            real*8 intent(in,out) :: by
+            real*8 intent(in,out) :: bz
+        end subroutine bspcar
+        subroutine bcarsp(x,y,z,bx,by,bz,br,btheta,bphi) ! in :geopack:geopack.F
+            real*8 intent(in) :: x
+            real*8 intent(in) :: y
+            real*8 intent(in) :: z
+            real*8 intent(in) :: bx
+            real*8 intent(in) :: by
+            real*8 intent(in) :: bz
+            real*8 intent(in,out) :: br
+            real*8 intent(in,out) :: btheta
+            real*8 intent(in,out) :: bphi
+        end subroutine bcarsp
+        subroutine recalc(iyear,iday,ihour,min_bn,isec) ! in :geopack:geopack.F
+            integer intent(in) :: iyear
+            integer intent(in) :: iday
+            integer intent(in) :: ihour
+            integer intent(in) :: min_bn
+            integer intent(in) :: isec
+        end subroutine recalc
+        subroutine geomag(xgeo,ygeo,zgeo,xmag,ymag,zmag,j) ! in :geopack:geopack.F
+            real*8 intent(in,out) :: xgeo
+            real*8 intent(in,out) :: ygeo
+            real*8 intent(in,out) :: zgeo
+            real*8 intent(in,out) :: xmag
+            real*8 intent(in,out) :: ymag
+            real*8 intent(in,out) :: zmag
+            integer intent(in) :: j
+        end subroutine geomag
+        subroutine geigeo(xgei,ygei,zgei,xgeo,ygeo,zgeo,j) ! in :geopack:geopack.F
+            real*8 intent(in,out) :: xgei
+            real*8 intent(in,out) :: ygei
+            real*8 intent(in,out) :: zgei
+            real*8 intent(in,out) :: xgeo
+            real*8 intent(in,out) :: ygeo
+            real*8 intent(in,out) :: zgeo
+            integer intent(in) :: j
+        end subroutine geigeo
+        subroutine magsm(xmag,ymag,zmag,xsm,ysm,zsm,j) ! in :geopack:geopack.F
+            real*8 intent(in,out) :: xmag
+            real*8 intent(in,out) :: ymag
+            real*8 intent(in,out) :: zmag
+            real*8 intent(in,out) :: xsm
+            real*8 intent(in,out) :: ysm
+            real*8 intent(in,out) :: zsm
+            integer intent(in) :: j
+        end subroutine magsm
+        subroutine gsmgse(xgsm,ygsm,zgsm,xgse,ygse,zgse,j) ! in :geopack:geopack.F
+            real*8 intent(in,out) :: xgsm
+            real*8 intent(in,out) :: ygsm
+            real*8 intent(in,out) :: zgsm
+            real*8 intent(in,out) :: xgse
+            real*8 intent(in,out) :: ygse
+            real*8 intent(in,out) :: zgse
+            integer intent(in) :: j
+            real*8 dimension(12) :: a
+        end subroutine gsmgse
+        subroutine smgsm(xsm,ysm,zsm,xgsm,ygsm,zgsm,j) ! in :geopack:geopack.F
+            real*8 intent(in,out) :: xsm
+            real*8 intent(in,out) :: ysm
+            real*8 intent(in,out) :: zsm
+            real*8 intent(in,out) :: xgsm
+            real*8 intent(in,out) :: ygsm
+            real*8 intent(in,out) :: zgsm
+            integer intent(in) :: j
+        end subroutine smgsm
+        subroutine geogsm(xgeo,ygeo,zgeo,xgsm,ygsm,zgsm,j) ! in :geopack:geopack.F
+            real*8 intent(in,out) :: xgeo
+            real*8 intent(in,out) :: ygeo
+            real*8 intent(in,out) :: zgeo
+            real*8 intent(in,out) :: xgsm
+            real*8 intent(in,out) :: ygsm
+            real*8 intent(in,out) :: zgsm
+            integer intent(in) :: j
+        end subroutine geogsm
+        subroutine trace(xi,yi,zi,dir,rlim,r0,iopt,parmod,exname,inname,xf,yf,zf,xx,yy,zz,l) ! in :geopack:geopack.F
+            real*8 intent(in) :: xi
+            real*8 intent(in) :: yi
+            real*8 intent(in) :: zi
+            real*8 intent(in) :: dir
+            real*8 intent(in) :: rlim
+            real*8 intent(in) :: r0
+            integer intent(in) :: iopt
+            real*8 intent(in), dimension(10) :: parmod
+            char intent(in), dimension(1024) :: exname
+            char intent(in), dimension(1024) :: inname
+!            external exname
+!            external inname
+            real*8 intent(out) :: xf
+            real*8 intent(out) :: yf
+            real*8 intent(out) :: zf
+            real*8 intent(out), dimension(1000) :: xx
+            real*8 intent(out), dimension(1000) :: yy
+            real*8 intent(out), dimension(1000) :: zz
+            integer intent(out) :: l
+        end subroutine trace
+        subroutine shuetal_mgnp(xn_pd,vel,bzimf,xgsm,ygsm,zgsm,xmgnp,ymgnp,zmgnp,dist,id) ! in :geopack:geopack.F
+            real*8 intent(in) :: xn_pd
+            real*8 intent(in) :: vel
+            real*8 intent(in) :: bzimf
+            real*8 intent(in) :: xgsm
+            real*8 intent(in) :: ygsm
+            real*8 intent(in) :: zgsm
+            real*8 intent(out) :: xmgnp
+            real*8 intent(out) :: ymgnp
+            real*8 intent(out) :: zmgnp
+            real*8 intent(out) :: dist
+            integer intent(out) :: id
+        end subroutine shuetal_mgnp
+        subroutine t96_mgnp(xn_pd,vel,xgsm,ygsm,zgsm,xmgnp,ymgnp,zmgnp,dist,id) ! in :geopack:geopack.F
+            real*8 intent(in) :: xn_pd
+            real*8 intent(in) :: vel
+            real*8 intent(in) :: xgsm
+            real*8 intent(in) :: ygsm
+            real*8 intent(in) :: zgsm
+            real*8 intent(out) :: xmgnp
+            real*8 intent(out) :: ymgnp
+            real*8 intent(out) :: zmgnp
+            real*8 intent(out) :: dist
+            integer intent(out) :: id
+        end subroutine t96_mgnp
+    end interface 
+end python module geopack
